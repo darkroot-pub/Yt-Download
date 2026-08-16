@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_list_container"
+    android:layout_marginBottom="8dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <FrameLayout
+        android:layout_width="44dp"
+        android:layout_height="44dp">
+
+        <View
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_brand_monogram" />
+
+        <ImageView
+            android:id="@+id/libraryTypeIcon"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_media_play"
+            android:contentDescription="Play" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/libraryFileName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/text_primary"
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/libraryShareButton"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_button_secondary"
+        android:contentDescription="Share"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_menu_share"
+        app:tint="@color/text_primary" />
+
+</LinearLayout>

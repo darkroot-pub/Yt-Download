@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:use_controller="true"
+        app:show_buffering="always"
+        app:surface_type="surface_view" />
+
+    <!-- Shown instead of a blank black surface when playing audio-only files -->
+    <LinearLayout
+        android:id="@+id/audioModeOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="28dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/app_logo"
+            android:contentDescription="DarkRoot Downloader" />
+
+        <TextView
+            android:id="@+id/audioModeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text=""
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="DARKROOT AUDIO"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            android:letterSpacing="0.18" />
+
+        <!-- Playback controls -->
+        <SeekBar
+            android:id="@+id/audioSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:progressTint="@color/accent"
+            android:thumbTint="@color/accent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/audioPositionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0:00"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/audioDurationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0:00"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/audioSeekBackButton"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_button_secondary"
+                android:contentDescription="Back 10 seconds"
+                android:padding="14dp"
+                android:src="@android:drawable/ic_media_rew"
+                app:tint="@color/text_primary" />
+
+            <ImageButton
+                android:id="@+id/audioPlayPauseButton"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginHorizontal="18dp"
+                android:background="@drawable/bg_button_primary"
+                android:contentDescription="Play or pause"
+                android:padding="18dp"
+                android:src="@android:drawable/ic_media_pause"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/audioSeekForwardButton"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_button_secondary"
+                android:contentDescription="Forward 10 seconds"
+                android:padding="14dp"
+                android:src="@android:drawable/ic_media_ff"
+                app:tint="@color/text_primary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_gravity="top|start"
+        android:layout_margin="14dp"
+        android:background="@drawable/bg_button_secondary"
+        android:contentDescription="Close player"
+        android:padding="10dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:tint="@color/text_primary" />
+
+    <TextView
+        android:id="@+id/playerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="14dp"
+        android:background="@drawable/bg_glass_panel"
+        android:ellipsize="middle"
+        android:maxWidth="220dp"
+        android:maxLines="1"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:text=""
+        android:textColor="@color/text_primary"
+        android:textSize="12sp" />
+
+</FrameLayout>

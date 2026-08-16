@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- App-specific external storage, used as the working/download dir -->
+    <external-files-path name="movies" path="Movies/" />
+    <external-files-path name="downloads" path="Download/" />
+
+    <!-- Public Downloads folder (pre-Android 10 direct-write path) -->
+    <external-path name="public_downloads" path="Download/" />
+</paths>
