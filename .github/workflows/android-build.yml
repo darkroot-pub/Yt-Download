@@ -25,7 +25,15 @@ jobs:
           accept-android-sdk-licenses: true
 
       - name: Accept Android SDK licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+        run: |
+          SDK_MANAGER=$(find $ANDROID_HOME -name "sdkmanager" | grep "cmdline-tools" | head -n 1)
+          if [ -n "$SDK_MANAGER" ]; then
+            echo "Using sdkmanager at $SDK_MANAGER"
+            yes | $SDK_MANAGER --licenses
+          else
+            echo "sdkmanager not found"
+            exit 1
+          fi
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
